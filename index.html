@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para que se adapte a cualquier dispositivo, Responsive -->
+        <title>Consultorio Psicologico</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+        <script src="https://unpkg.com/@phosphor-icons/web"></script> 
+    
+        <link rel="stylesheet" href="styles.css"> 
+        <script src="app.js" defer></script> 
+    </head> 
+
+    <body>
+        <div class="layout">
+
+            <aside class="layout__sidebar sidebar">
+                <div class="sidebar__widget">
+                    <h3 class="sidebar__title">MES 2026</h3>
+                    <div class="sidebar__placeholder-mini-cal">
+                        (Por desarrollar)
+                    </div>
+                </div>
+
+                <div class="sidebar__widget">
+                    <div class="sidebar__header">
+                        <i class="ph ph-clock"></i>
+                        <h3>Proximos Turnos</h3>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="layout__main main-content">
+                <header class="main-content__header topbar">
+                    <div class="topbar__title">
+                        <i class="ph ph-calendar-blank"></i>
+                            <h2>Calendario</h2>
+                    </div>
+
+                    <button class="btn btn--primary" id="btn-nuevo-turno">
+                        <i class="ph ph-plus"></i> Nuevo Turno
+                    </button>
+                </header>
+
+                <div class="main-content__calendar-wrapper">
+                    <div id="calendar"></div>
+                </div>
+            </main>
+        </div>
+
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+
+    </body>
+</html>
