@@ -480,3 +480,92 @@
 .fc .fc-day-today {
     background-color: rgba(90, 79, 207, 0.03) !important;
 }
+
+.sidebar__widget {
+    margin-top: 20px;
+    margin-bottom: auto; 
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.sidebar__widget-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: var(--color-text-main);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+.upcoming-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.upcoming-date {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 6px;
+    padding: 6px;
+    min-width: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.upcoming-date span:first-child {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.upcoming-date span:last-child {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.upcoming-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.upcoming-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+}
+
+.upcoming-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.upcoming-empty {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: 10px 0;
+}

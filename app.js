@@ -527,6 +527,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             return;
         }
 
+        actualizarProximosTurnos(data);
         
         const eventosFullCalendar = data.map(turno => {
             
@@ -555,4 +556,63 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     cargarTurnos();
+
+    function actualizarProximosTurnos(turnosData) {
+        const contenedor = document.getElementById('listaProximosTurnos');
+        contenedor.innerHTML = '';
+
+        
+        const hoy = new Date();
+        hoy.setHours(0, 0, 0, 0); 
+        
+        const pasadoManana = new Date(hoy);
+        pasadoManana.setDate(pasadoManana.getDate() + 2); 
+
+        
+        const turnosProximos = turnosData.filter(turno => {
+            if (turno.estado !== 'Programado') return false; 
+            
+            const fechaTurno = new Date(turno.fecha_inicio);
+            return fechaTurno >= hoy && fechaTurno < pasadoManana;
+        });
+
+        
+        turnosProximos.sort((a, b) => new Date(a.fecha_inicio) - new Date(b.fecha_inicio));
+
+        
+        if(turnosProximos.length === 0) {
+            contenedor.innerHTML = '<p class="upcoming-empty">No hay turnos próximos para hoy o mañana.</p>';
+            return;
+        }
+
+        const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+        
+        turnosProximos.forEach(turno => {
+            const fecha = new Date(turno.fecha_inicio);
+            const mesStr = meses[fecha.getMonth()];
+            const diaStr = String(fecha.getDate()).padStart(2, '0');
+            
+            const horaInicio = fecha.toLocaleTimeString('es-ES', {hour: '2-digit', minute:'2-digit'});
+            const horaFin = new Date(turno.fecha_fin).toLocaleTimeString('es-ES', {hour: '2-digit', minute:'2-digit'});
+
+            const div = document.createElement('div');
+            div.className = 'upcoming-item';
+            div.innerHTML = `
+                <div class="upcoming-date">
+                    <span>${mesStr}</span>
+                    <span>${diaStr}</span>
+                </div>
+                <div class="upcoming-info">
+                    <span class="upcoming-name">${turno.pacientes.nombre_completo}</span>
+                    <span class="upcoming-time">
+                        <i data-lucide="clock" style="width: 14px; height: 14px;"></i> 
+                        ${horaInicio} - ${horaFin}
+                    </span>
+                </div>
+            `;
+            contenedor.appendChild(div);
+        });
+        
+        lucide.createIcons();
+    }
 });

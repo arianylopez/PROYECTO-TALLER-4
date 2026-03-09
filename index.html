@@ -25,15 +25,22 @@
                 <a href="#" class="sidebar__link sidebar__link--active" id="linkCalendario">
                     <i data-lucide="layout-grid"></i> Calendario
                 </a>
-                
                 <a href="#" class="sidebar__link" id="linkPacientes">
                     <i data-lucide="users"></i> Pacientes
                 </a>
-                
                 <a href="#" class="sidebar__link" id="linkHorarios">
                     <i data-lucide="clock"></i> Horarios
                 </a>
             </nav>
+
+            <div class="sidebar__widget">
+                <h3 class="sidebar__widget-title">
+                    <i data-lucide="clock"></i> Próximos Turnos
+                </h3>
+                <div class="upcoming-list" id="listaProximosTurnos">
+                    <p class="upcoming-empty">Cargando turnos...</p>
+                </div>
+            </div>
 
             <div class="sidebar__footer">
                 <a href="#" class="sidebar__link sidebar__link--danger">
