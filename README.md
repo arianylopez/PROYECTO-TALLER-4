@@ -75,7 +75,7 @@ Resultado: Definición de historias de usuario detalladas que mapean el "flujo p
 
 Se crearon prototipos de alta fidelidad en Figma para definir la experiencia de usuario (UX) y la interfaz (UI). El enfoque se centró en la simplicidad, permitiendo al psicólogo realizar gestiones con el mínimo número de clics.
 
-[Enlace al Proyecto en Figma][(https://www.figma.com/design/Sabi6tVdRuJBopVHTzo1zd/GESTION-DE-TURNOS-PSICOLOGICO?node-id=0-1&t=IRq75y7eAeMmgKq5-1)
+[Enlace al Proyecto en Figma](https://www.figma.com/design/Sabi6tVdRuJBopVHTzo1zd/GESTION-DE-TURNOS-PSICOLOGICO?node-id=0-1&t=IRq75y7eAeMmgKq5-1)
 
 ![AgendaMensual](https://github.com/user-attachments/assets/e6be2807-0c88-45b9-8430-e868a839a3ce)
 
