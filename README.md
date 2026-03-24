@@ -69,13 +69,13 @@ Se identificaron los cuellos de botella del proceso manual (agendas de papel, ch
 
 Resultado: Definición de historias de usuario detalladas que mapean el "flujo principal" necesario: registro de pacientes -> configuración de disponibilidad -> agendamiento sin conflictos -> monitorización de estados.
 
-(Enlace al Documento de Analisis de Requerimientos)[https://docs.google.com/document/d/16CowSFZi3roO9Cc2wlwK9R_u_kZ6v1btZLs0iW79BG4/edit?usp=sharing] 
+[Enlace al Documento de Analisis de Requerimientos](https://docs.google.com/document/d/16CowSFZi3roO9Cc2wlwK9R_u_kZ6v1btZLs0iW79BG4/edit?usp=sharing) 
 
 ### 2. Fase de Diseño
 
 Se crearon prototipos de alta fidelidad en Figma para definir la experiencia de usuario (UX) y la interfaz (UI). El enfoque se centró en la simplicidad, permitiendo al psicólogo realizar gestiones con el mínimo número de clics.
 
-(Enlace al Proyecto en Figma)[https://www.figma.com/design/Sabi6tVdRuJBopVHTzo1zd/GESTION-DE-TURNOS-PSICOLOGICO?node-id=0-1&t=IRq75y7eAeMmgKq5-1] 
+[Enlace al Proyecto en Figma][(https://www.figma.com/design/Sabi6tVdRuJBopVHTzo1zd/GESTION-DE-TURNOS-PSICOLOGICO?node-id=0-1&t=IRq75y7eAeMmgKq5-1)
 
 ![AgendaMensual](https://github.com/user-attachments/assets/e6be2807-0c88-45b9-8430-e868a839a3ce)
 
@@ -98,3 +98,41 @@ La construcción técnica se realizó alineada estrictamente con el diseño vali
 ![arquitectura](https://github.com/user-attachments/assets/9ebcb182-ecb4-4df6-ab4c-e8f65bce625d)
 
 **Descripción del flujo:** El usuario interactúa con la UI (Vanilla JS + FullCalendar). La lógica de cliente utiliza el SDK de Supabase para enviar/recibir datos. Supabase gestiona la autenticación y persiste los datos en PostgreSQL, ejecutando validaciones críticas (como evitar solapamientos de turnos) antes de confirmar cambios.
+
+## Distribucion de Carpetas
+
+```
+proyecto-taller-4/
+├── docs/                     
+│   ├── HISTORIAS DE USUARIO.docx     # Anexo de historias de usuario del sistema
+|   ├── PROYECTO 4 - TALLER DE DISEÑO DE SOFTWARE.docx  # Analisis de Requerimientos
+│   ├── arquitectura.jpg              # Diagrama de arquitectura 
+├── src/                  # Implementacion del sistema
+│   ├── app.js
+|   ├── index.html
+│   ├── styles.css
+└── video/                
+    ├── video.mp4         
+```
+
+## Instalación y Configuración local
+
+Para ejecutar este proyecto en tu entorno local para desarrollo o pruebas, sigue estos pasos:
+
+**1. Clonar el repositorio:**
+
+```
+git clone https://github.com/arianylopez/PROYECTO-TALLER-4.git
+cd PROYECTO-TALLER-4
+code .
+```
+
+**2. Ejecutar localmente:**
+
+- Abre el proyecto en tu editor de código (ej. VS Code).
+
+- Inicia tu servidor local preferido apuntando a index.html.
+
+- Ejemplo con VS Code Live Server: Haz clic derecho sobre index.html y selecciona "Open with Live Server".
+
+La aplicación se abrirá en tu navegador, generalmente en `http://127.0.0.1:5500`
